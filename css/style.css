@@ -1,4 +1,27 @@
  .fancy-header {
-        color: red;
-        text-decoration: underline;
+     text-align: center;
+     color: red;
+     text-decoration: underline;
     }
+h2 {
+    color: red;
+    text-decoration: underline;
+    }
+body {
+    background-image: url("https://hdwallsource.com/img/2014/9/simple-vintage-backgrounds-17271-17827-hd-wallpapers.jpg");
+    background-repeat: repeat-y;
+    font-family: Arial;
+}
+ ol {
+     list-style: square;
+ }
+ ul {
+     list-style: square;
+ }
+ td {
+     padding-left: 80px;
+     font-size: 15px;
+ }
+ a:hover {
+     color:blue;
+ }
