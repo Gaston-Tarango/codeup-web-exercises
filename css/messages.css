@@ -1,0 +1,36 @@
+body, html {
+    height: 100%;
+    width: 95%;
+    padding: 5px;
+    margin: 5px;
+    font-family: Arial, Ubuntu, sans-serif;}
+
+.message1 {
+    background-color: lightskyblue;
+    border: 1px lightgray;
+    margin: 5px;
+    color: darkblue;
+    d
+
+}
+
+.message2 {
+    background-color: #cbffcd;
+    border: 1px lightgray;
+    margin: 5px;
+    color: darkgreen;
+}
+
+.message3 {
+    background-color: lightgoldenrodyellow;
+    border: 1px lightgray;
+    margin: 5px;
+    color: darkgoldenrod;
+}
+
+.message4 {
+    background-color: lightcoral;
+    border: 1px lightgray;
+    margin: 5px;
+    color: darkred;
+}
