@@ -26,7 +26,34 @@
 				width = width
 			>>> For more info on box-sizing: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
 		*/
+		.box {
+			width: 250px;
+			height: 200px;
+			padding: 10px;
+			background-color: lightgray;
+			border: 2px black;
+		}
 
+		.first-box {
+			background-color: lightgray;
+		}
+
+		.second-box {
+			background-color: red;
+			box-sizing: border-box;
+		}
+
+		div{
+			box-sizing: 1px solid black;
+		}
+
+		p{
+			border: 1px solid red;
+		}
+
+		span{
+			border: 1px solid purple;
+		}
 	</style>
 </head>
 <body>
@@ -37,6 +64,15 @@
 	<h4>Here are some boxes...</h4>
 	<!--	TODO TOGETHER: EXPLORE BOXES. -->
 
+	<div class="box first-box">
+		<h1>First Box Content</h1>
+		<p>The total width of the box is: 270</p>
+	</div>
+
+	<div class="box second-box">
+		<h1>Second Box Content</h1>
+		<p>The total width of the box is: 250</p>
+	</div>
 
 
 
