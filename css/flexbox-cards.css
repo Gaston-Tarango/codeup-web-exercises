@@ -19,6 +19,7 @@ a {
 .container {
     max-width: 750px;
     margin: 0 auto;
+
 }
 
 .card {
@@ -27,6 +28,7 @@ a {
     padding: 20px;
     border-radius: 4px;
     text-align: center;
+
 }
 
 .card-title {
@@ -34,6 +36,7 @@ a {
     color: white;
     letter-spacing: 2px;
     text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+
 }
 
 .card-body {
@@ -67,8 +70,11 @@ a {
 
 .container {
     /* This is a flex container */
+    display: flex;
+    flex-direction: row;
 }
 
 .card {
     /* This is a flex item */
+    align-self: center;
 }
