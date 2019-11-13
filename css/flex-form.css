@@ -60,13 +60,15 @@ body {
     /* flex container */
 }
 .flex-form {
+    display: flex;
     align-content: flex-start;
     justify-content: stretch;
-    flex: ;
+    flex-flow: row;
     /* flex items */
 
 }
 .destination {
-    flex-wrap: wrap;
+    display: flex;
+    flex-basis: 30%;
     /* bigger item */
 }
