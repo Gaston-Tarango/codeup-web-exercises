@@ -16,6 +16,8 @@ body {
     height: 100%;
     position: absolute;
     top: 0;
+    width: 100%;
+    object-fit: cover;
 }
 
 .cover {
@@ -50,12 +52,21 @@ body {
 
 
 /*flex solution*/
+
 .cover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     /* flex container */
 }
 .flex-form {
+    align-content: flex-start;
+    justify-content: stretch;
+    flex: ;
     /* flex items */
+
 }
 .destination {
+    flex-wrap: wrap;
     /* bigger item */
 }
