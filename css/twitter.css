@@ -68,6 +68,9 @@ a {
     list-style-type: none;
     padding: 0;
 }
+.profile-entry {
+    margin: .5em;
+}
 .timeline {
     float: left;
     width: calc(50% - 1em);
@@ -90,12 +93,12 @@ a {
 }
 .media-image {
     float: left;
-    width: 50px;
+    max-width: 50px;
     margin-top: 1.33em;
 }
 .media-body {
     float: right;
-    width: calc(100% - 3.3em);
+    width: calc(100% - 50px);
 }
 .btn {
     border: 1px solid var(--main-link-color);
