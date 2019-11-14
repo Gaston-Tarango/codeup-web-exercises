@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    text-align: center;
+}
+main {
+    margin-top: 2em;
+    background: lightgreen;
+    display: grid;
+    /*grid-template-columns: 1fr 1fr 1fr 1fr;*/
+    /*grid-template-rows: 1fr 1fr 1fr;*/
+    grid-template-areas:
+            "one one . . ."
+            "one one . two ."
+            ". three three . ."
+;
+    grid-gap: 20px;
+
+}
+main div {
+    font-size: 2em;
+    color: white;
+    background: grey;
+    border: 2px solid black;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.example-item {
+    background-color: lightgreen;
+    opacity: .7;
+}
+
+.one {
+    grid-area: one;
+    background-color: purple;
+    /*grid-area: 1/ 2 / 2 / 2*/
+}
+.two {
+    grid-area: two;
+    background-color: firebrick;
+    /*grid-area: 1/ 2 / 2 / 2*/
+}
+.three {
+    grid-area: three;
+    background-color: saddlebrown;
+    /*grid-area: 1/ 2 / 2 / 2*/
+}
+.four {
+    display: none;
+}
+.five {
+    display: none;
+}
+.six {
+    display: none;
+}
+.seven {
+    display: none;
+}
+.eight {
+    display: none;
+}
+.nine {
+    display: none;
+}
+.ten {
+    display: none;
+}
+/*.four {grid-area: 1/ 2 / 2 / 2}*/
+/*.five {grid-area: 1/ 2 / 2 / 2}*/
+/*.six {*/
+/*    grid-area: 2 / 2 / 3 / 4;*/
+/*}*/
+/*.seven {*/
+/*    grid-area: 2 / 4 / 4 / 5;*/
+/*}*/
+/*.eight {grid-area: 1/ 2 / 2 / 2}*/
+/*.nine {grid-area: 1/ 2 / 2 / 2}*/
+/*.ten {*/
+/*    grid-area: 3/ 3 / 4 / 5;*/
+/*}*/
