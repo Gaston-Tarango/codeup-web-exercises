@@ -1,17 +1,22 @@
 * {
     box-sizing: border-box;
 }
+body{
+    margin: 0;
+}
 .parent {
     display: grid;
-    grid-template-columns: repeat(4, 5em);
-    grid-template-rows: repeat(4, 5em);
+    height: 500px;
+    width: 500px;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
     grid-column-gap: 0;
     grid-row-gap: 0;
 }
 
 .div1 {
     background-color: navy;
-    grid-area: 1 / 1 / 2 / 2;
+    grid-area: 1 / 1 / span 2 / span 2;
     border: 2px solid black;
 }
 .div2 {
@@ -51,47 +56,5 @@
 }
 
 
-/*.two {*/
-/*    grid-area: two;*/
-/*    background-color: firebrick;*/
-/*    !*grid-area: 1/ 2 / 2 / 2*!*/
-/*}*/
-/*.three {*/
-/*    grid-area: three;*/
-/*    background-color: saddlebrown;*/
-/*    !*grid-area: 1/ 2 / 2 / 2*!*/
-/*/*}*/
-/*/*.four {*/
-/*/*    display: none;*/
-/*/*}*/
-/*/*.five {*/
-/*/*    display: none;*/
-/*/*}*/
-/*/*.six {*/
-/*/*    display: none;*/
-/*/*}*/
-/*/*.seven {*/
-/*/*    display: none;*/
-/*/*}*/
-/*/*.eight {*/
-/*/*    display: none;*/
-/*/*}*/
-/*/*.nine {*/
-/*/*    display: none;*/
-/*/*}*/
-/*/*.ten {*/
-/*/*    display: none;*/
-/*/*}*/
-/*.four {grid-area: 1/ 2 / 2 / 2}*/
-/*.five {grid-area: 1/ 2 / 2 / 2}*/
-/*.six {*/
-/*    grid-area: 2 / 2 / 3 / 4;*/
-/*}*/
-/*.seven {*/
-/*    grid-area: 2 / 4 / 4 / 5;*/
-/*}*/
-/*.eight {grid-area: 1/ 2 / 2 / 2}*/
-/*.nine {grid-area: 1/ 2 / 2 / 2}*/
-/*.ten {*/
-/*    grid-area: 3/ 3 / 4 / 5;*/
-/*}*/
+
+
