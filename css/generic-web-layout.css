@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    width: 100%;
+    height: 100vh;
+}
+div {
+
+}
+#header { grid-area: 1 / 1 / 2 / 4; }
+#nav { grid-area: 2 / 1 / 7 / 2; }
+#article { grid-area: 2 / 2 / 5 / 3; }
+#ads {
+    grid-area: 2 / 3 / 5 / 4;
+}
+#numbernav { grid-area: 5 / 2 / 6 / 4; }
+#footer { grid-area: 6 / 2 / 7 / 4; }
+
+.advertisements p {
+    border: #848487 solid;
+}
