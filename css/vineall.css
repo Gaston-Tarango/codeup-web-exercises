@@ -52,7 +52,7 @@ button {
     font-size: inherit;
 }
 .background-img {
-    background: url("../Img/instruments.jpg") no-repeat center center fixed;
+    background: url("../img/instruments.jpg") no-repeat center center fixed;
     background-size: cover;
     grid-area: 1 / 1 / 2 / -1;
     min-height: 100vh;
