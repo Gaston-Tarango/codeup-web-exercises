@@ -68,6 +68,31 @@
         }
         console.log(typeof 42)
 
+        //write a js function that takes an array and puts 2 into it
+        var put2 = function (inputArray) {
+            inputArray.put(2);
+            return inputArray;
+        }
+
+        //console.log(put2(["dog", "cat", "bird", "fish"])); //output: ["dog", "cat", "bird", "fish", 2]
+        //console.log(put2(["d", "c", "b", "f"])); //output: ["d", "c", "b", "f", 2]
+
+
+        // write a js function that accepts a number and returns true if that number is greater than 10
+        //  function greaterThanTen(numInput){
+         //    if(numInput > 10) {
+         //        return true;
+         //    } else {
+         //        return false;
+         //    }
+         // }
+
+             function greaterThanTen(numInput){
+             return numInput > 10;
+         }
+
+         console.log(greaterThanTen(5)); //false
+         console.log(greaterThanTen(12)); //true
     </script>
 </body>
 </html>
