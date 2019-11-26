@@ -6,93 +6,113 @@
 </head>
 <body>
     <script>
-        function helloWorld() {
-            return "hello world";
+        // function helloWorld() {
+        //     return "hello world";
+        // }
+        // // console.log(helloWorld());
+        //
+        // // Write a function called add (x,y)
+        // // that takes two numbers and returns the sum
+        // function add(x,y) {
+        //     return x + y;
+        // }
+        //
+        // console.log(add(1,1));
+        //
+        // // Write a js function called addFour(w,x,y,z)
+        // // that takes in four numbers and returns the sum
+        // function addFour(w,x,y,z) {
+        //     var sum = w + x + y + z;
+        //     return sum;
+        // }
+        // //this is a different example problem above works also
+        //
+        // console.log(addFour(1,1,1,1));
+        //
+        // //Write js function called calculate rectangleArea that tacks in
+        // // length and width and returns the area of a rectangle
+        // function calculateRectangleArea(x, y) {
+        //     return (x * y);
+        // }
+        //
+        // console.log(calculateRectangleArea());
+        //
+        // //Write a js function called firstItem that takes in an array and returns the first item of that arra
+        // function firstItem(inputArray) {
+        //     return inputArray[0]
+        // }
+        //
+        // firstItem(["d", "c", "b", "f"]);
+        // console.log(firstItem());
+        //
+        // //Write a js function called arrayLength that takes in an array and returns the length of that array
+        // var arrayLength = function (inputArray) {
+        //     return inputArray.length;
+        // }
+        // console.log(arrayLength(["d", "c", "b", "f"])); // output: 4
+        //
+        // // Write js function called nthItem that takes in an array and a number and returns the nth item from the array
+        //
+        // var nthItem = function (inputArray, n) {
+        //     return inputArray[n-1];
+        // }
+        // console.log(nthItem(["a", "b", "c", "d"], 2));
+        //
+        // //write a js function called getType that takes in an input and returns the type of that input
+        // function getType(input) {
+        //     return typeof input
+        // }
+        //
+        // var getType = function(input){
+        //     return typeof input
+        // }
+        // console.log(typeof 42)
+        //
+        // //write a js function that takes an array and puts 2 into it
+        // var put2 = function (inputArray) {
+        //     inputArray.put(2);
+        //     return inputArray;
+        // }
+        //
+        // //console.log(put2(["dog", "cat", "bird", "fish"])); //output: ["dog", "cat", "bird", "fish", 2]
+        // //console.log(put2(["d", "c", "b", "f"])); //output: ["d", "c", "b", "f", 2]
+        //
+        //
+        // // write a js function that accepts a number and returns true if that number is greater than 10
+        // //  function greaterThanTen(numInput){
+        //  //    if(numInput > 10) {
+        //  //        return true;
+        //  //    } else {
+        //  //        return false;
+        //  //    }
+        //  // }
+        //
+        //      function greaterThanTen(numInput){
+        //      return numInput > 10;
+        //  }
+        //
+        //  console.log(greaterThanTen(5)); //false
+        //  console.log(greaterThanTen(12)); //true
+
+        //write a js function called youMayEnter that accepts a number that us an age. If the age is 13 or greater, return "You may Enter!" else, "sorry, you need a aparent or gaurdian to enter."
+        // 1. write a function named youMayEnter
+        // 2. parameter is a number
+        // 3. number >= 13 if true u may enter
+        // 4. age < 13 sorry need parent
+        function youMayEnter(age){
+            if(age >= 13){
+                return "you may enter";
+            } else {
+                return "sorry get out"
+            }
         }
-        // console.log(helloWorld());
-
-        // Write a function called add (x,y)
-        // that takes two numbers and returns the sum
-        function add(x,y) {
-            return x + y;
-        }
-
-        console.log(add(1,1));
-
-        // Write a js function called addFour(w,x,y,z)
-        // that takes in four numbers and returns the sum
-        function addFour(w,x,y,z) {
-            var sum = w + x + y + z;
-            return sum;
-        }
-        //this is a different example problem above works also
-
-        console.log(addFour(1,1,1,1));
-
-        //Write js function called calculate rectangleArea that tacks in
-        // length and width and returns the area of a rectangle
-        function calculateRectangleArea(x, y) {
-            return (x * y);
-        }
-
-        console.log(calculateRectangleArea());
-
-        //Write a js function called firstItem that takes in an array and returns the first item of that arra
-        function firstItem(inputArray) {
-            return inputArray[0]
-        }
-
-        firstItem(["d", "c", "b", "f"]);
-        console.log(firstItem());
-        
-        //Write a js function called arrayLength that takes in an array and returns the length of that array
-        var arrayLength = function (inputArray) {
-            return inputArray.length;
-        }
-        console.log(arrayLength(["d", "c", "b", "f"])); // output: 4
-
-        // Write js function called nthItem that takes in an array and a number and returns the nth item from the array
-
-        var nthItem = function (inputArray, n) {
-            return inputArray[n-1];
-        }
-        console.log(nthItem(["a", "b", "c", "d"], 2));
-
-        //write a js function called getType that takes in an input and returns the type of that input
-        function getType(input) {
-            return typeof input
-        }
-
-        var getType = function(input){
-            return typeof input
-        }
-        console.log(typeof 42)
-
-        //write a js function that takes an array and puts 2 into it
-        var put2 = function (inputArray) {
-            inputArray.put(2);
-            return inputArray;
-        }
-
-        //console.log(put2(["dog", "cat", "bird", "fish"])); //output: ["dog", "cat", "bird", "fish", 2]
-        //console.log(put2(["d", "c", "b", "f"])); //output: ["d", "c", "b", "f", 2]
 
 
-        // write a js function that accepts a number and returns true if that number is greater than 10
-        //  function greaterThanTen(numInput){
-         //    if(numInput > 10) {
-         //        return true;
-         //    } else {
-         //        return false;
-         //    }
-         // }
+        console.log(youMayEnter(25));
+        console.log(youMayEnter(7));
+        console.log(youMayEnter(13));
 
-             function greaterThanTen(numInput){
-             return numInput > 10;
-         }
 
-         console.log(greaterThanTen(5)); //false
-         console.log(greaterThanTen(12)); //true
     </script>
 </body>
 </html>
