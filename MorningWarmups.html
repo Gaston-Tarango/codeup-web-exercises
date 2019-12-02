@@ -99,20 +99,40 @@
         // 2. parameter is a number
         // 3. number >= 13 if true u may enter
         // 4. age < 13 sorry need parent
-        function youMayEnter(age){
-            if(age >= 13){
-                return "you may enter";
+        // function youMayEnter(age){
+        //     if(age >= 13){
+        //         return "you may enter";
+        //     } else {
+        //         return "sorry get out"
+        //     }
+        // }
+        //
+        //
+        // console.log(youMayEnter(25));
+        // console.log(youMayEnter(7));
+        // console.log(youMayEnter(13));
+        // console.log(youMayEnter(19));
+
+        //write a js function called seeYouLater that accepts a string. If the string is alligator, return "See you later alligator!", if the string is crocodile, return "After a while crocodile!", if the string is not either, return "So long!"
+        // 1. Write a function seeYouLater(inputString)
+        // 2. if = conditions -we have 3 conditions to check
+        // 3. alligator - see u later
+        // 4. crocodile - after a while
+        // 5 something different - so long
+
+        function seeYouLater(inputString) {
+            if (inputString = "alligator"){
+                return "See You later alligator";
+            } else if (inputString = "crocodile"){
+                return "after a while, crocodile";
             } else {
-                return "sorry get out"
+                return "so long";
             }
         }
 
-
-        console.log(youMayEnter(25));
-        console.log(youMayEnter(7));
-        console.log(youMayEnter(13));
-        console.log(youMayEnter(19));
-
+        console.log(seeYouLater("alligator")); //See you later alligator!
+        console.log(seeYouLater("crocodile")); //After a while crocodile!
+        console.log(seeYouLater("dog")) //So long!
 
     </script>
 </body>
