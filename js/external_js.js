@@ -15,7 +15,7 @@ var herc = prompt("How many days did you rent Hercules?");
 alert("You rented movies at the rate of $3 a day for $" + ((parseInt(lilmer) + parseInt(brobear)+ parseInt(herc)) * (moviedays)));
 
 
-var totalHrs =
+// var totalHrs =
 
 var googleHours =(prompt("Working for Google pays $400/hr. How many hours of work was done at Google?"));
 var fbHours =(prompt("Working for FB pays $350/hr. How many hours of work was done at Facebook?"));
