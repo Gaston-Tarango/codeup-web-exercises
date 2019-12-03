@@ -10,10 +10,10 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 function sayHello (name){
-    return " Hello " +  (name);
+    return " Hello " + name + "!";
 
 }
-console.log(sayHello());
+console.log(sayHello("codeup"));
 
 /**
  * TODO:
@@ -23,7 +23,6 @@ console.log(sayHello());
  * console.log 'helloMessage' to check your work
  */
 
-sayHello("Gaston");
 var helloMessage = sayHello("Gaston");
 
 console.log(helloMessage);
@@ -36,7 +35,7 @@ console.log(helloMessage);
  */
 
 var myName = "Gaston";
-console.log(sayHello());
+console.log(sayHello(myName));
 
 
 
@@ -64,12 +63,13 @@ var random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
 
-function isTwo(number) {
-    if (number === 2) ;
-    return true
+var isTwo = function(number) {
+    return number === 2;
 }
-console.log(isTwo());
-
+console.log(isTwo(1));
+console.log(isTwo(2));
+console.log(isTwo(3));
+console.log(isTwo(random));
 
 
 /**
@@ -84,12 +84,12 @@ console.log(isTwo());
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 
-function calculateTip(){
-    var tip = .20;
-    var total = 20;
+var calculateTip = function(tip, total){
     return tip * total;
 }
-console.log(calculateTip());
+console.log(calculateTip(0.20, 20));
+console.log(calculateTip(0.25, 25.50));
+console.log(calculateTip(0.15, 33.42));
 
 
 /**
@@ -99,13 +99,13 @@ console.log(calculateTip());
  * then display the dollar amount they should tip
  */
 
-var tip = (20);
-var total = (.20);
-var howmuch = (tip * total);
 
-var tip = prompt("What was the total of your bill?");
-var total = prompt ("Great, How much would you like to tip in percentages?");
+var howmuch = (tipTotal * totalBill);
+
+var totalBill = prompt("What was the total of your bill?");
+var tipTotal = prompt ("Great, How much would you like to tip in percentages?");
 alert ("Great, you should tip $" + howmuch);
+console.log(howmuch);
 
 
 
@@ -120,8 +120,8 @@ alert ("Great, you should tip $" + howmuch);
  *
  * Example:
  * > var originalPrice = 100;
- * > var dicountPercent = .2; // 20%
- * > applyDiscount(originalPrice, dicountPercent) // 80
+ * > var discountPercent = .2; // 20%
+ * > applyDiscount(originalPrice, discountPercent) // 80
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
