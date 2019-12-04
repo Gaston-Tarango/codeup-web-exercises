@@ -16,14 +16,55 @@
  * Can you refactor your code to use functions?
  */
 
+/* (WRITE OUT PSEUDO CODE TO HELP SOLVE PROBLEMS)
+    1. I need a confirm to ask the user if they want to enter a number. (if they don't enter #, skip down to final 'else').
+    2. ((nested)) if they click confirm (we need a conditional) ask the user for a number (prompt)
+    3. if this is a number or not.
+    4. if number, even odd, number + 100, neg/pos
+    5. if not, tell them it's not.
+*/
+
+function numberStuff() {
+    var numbers = confirm("Would you like to enter a number?");
+    if (numbers === true) {
+        var typedNumber = parseInt(prompt("Please enter a number:"));
+        console.log("The user's number: " + typedNumber);
+        var isNumber = (!isNaN(typedNumber));
+        console.log("The user typed an actual number: " + isNumber);
+        if (isNumber) {
+            if (typedNumber % 2 === 0) {
+                alert("That number is even!");
+            } else {
+                alert("That number is odd!");
+            }
+            alert("Your number, plus one hundred, is " + (parseInt(typedNumber) + 100));
+            if (typedNumber > 0) {
+                alert("Your number is positive");
+            } else {
+                alert("Your number is negative");
+            }
+            if (isNaN(typedNumber)) {
+                alert("That's not a number.")
+            }
+        } else {
+            alert("That's not a number.");
+        }
+    }
+}
+numberStuff();
+
+
+
+
+
 /* ########################################################################## */
 
 /**
  * TODO:
  * Create a function named `analyzeColor` that accepts a string that is a color
  * name as input. This function should return a message that related to that
- * color. Only worry about the colors defined below, if the color passed is not
- * one of the ones defined below, return a message that says so
+ * color. Only worry about the colors defined above, if the color passed is not
+ * one of the ones defined above, return a message that says so
  *
  * Example:
  *  > analyzeColor('blue') // returns "blue is the color of the sky"
@@ -36,23 +77,66 @@
  * console.logging the function's return value
  */
 
+function analyzeColor(color) {
+    if (color === "blue") {
+        return "Wow, that's blue!"
+    } else if (color === "red") {
+        return "awesome, that's red!"
+    } else if (color === "green") {
+        return "eh, that's green!"
+    } else if (color === "orange") {
+        return "Yep, that's orange."
+    } else if (color === "yellow") {
+        return "ok. Yellow!"
+    } else {
+        return "what the hell?."
+    }
+}
+
+
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
 // - `randomColor`: contains a single random color value from the list (this
-//                  will contain a different color every time the page loads)
+//                  will contain a different color everytime the page loads)
 var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 var randomColor = colors[Math.floor(Math.random() * colors.length)];
 /**
  * TODO:
  * Pass the `randomColor` variable to your function and console.log the results.
- * You should see a different message every time you refresh the page
+ * You should see a different message everytime you refresh the page
  */
+console.log(analyzeColor(randomColor));
 
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
+
+function colorPicker () {
+    var returnMessage;
+    switch (randomColor) {
+        case (randomColor === "blue"):
+            returnMessage = "Wow,that's blue!";
+            break;
+        case (randomColor === "red"):
+            returnMessage = "awesome, that's red!";
+            break;
+        case (randomColor === "green"):
+            returnMessage = "eh, that's green!";
+            break;
+        case (randomColor === "orange"):
+            returnMessage = "Yep, that's orange.";
+            break;
+        case (randomColor === "yellow"):
+            returnMessage = "ok. yellow!";
+            break;
+        default:
+            returnMessage = "What the hell?";
+            break;
+    }
+    return returnMessage;
+}
 
 /**
  * TODO:
@@ -60,6 +144,10 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+
+var colorPrompt  = prompt("What color?");
+var newColor = analyzeColor(colorPrompt);
+alert(newColor);
 
 /* ########################################################################## */
 
@@ -82,13 +170,40 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
+function calculateTotal(luckyNumber, totalBill) {
+    var discountRate = 0;
+    if (luckyNumber === 1) {
+        discountRate = .1;
+    }
+    else if (luckyNumber === 2) {
+        discountRate = .25;
+    }
+    else if (luckyNumber === 3) {
+        discountRate = .35;
+    }
+    else if (luckyNumber === 4) {
+        discountRate = .5;
+    }
+    else if (luckyNumber === 5) {
+        return "It's free!";
+    }
+    else {
+        return totalBill;
+    }
+    return (totalBill - (totalBill * discountRate));
+}
 
+(calculateTotal(4, 35));
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 6.
  * Prompt the user for their total bill, then use your `calculateTotal` function
  * and alerts to display to the user what their lucky number was, what their
  * price before the discount was, and what their price after the discount is.
- */
+ //  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+var luckyNumber = Math.floor(Math.random() * 6);
+
+var totalBill = parseFloat(prompt("How much was your total bill?"));
+var realTotal = calculateTotal(luckyNumber, totalBill);
+alert("Your lucky number is " + luckyNumber + " Your price before discount was " + totalBill + " Your discounted price is now " + realTotal);
