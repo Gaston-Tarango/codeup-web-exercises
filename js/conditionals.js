@@ -89,7 +89,7 @@ function analyzeColor(color) {
     } else if (color === "yellow") {
         return "ok. Yellow!"
     } else {
-        return "what the hell?."
+        return "what the hell is that?."
     }
 }
 
@@ -132,7 +132,7 @@ function colorPicker () {
             returnMessage = "ok. yellow!";
             break;
         default:
-            returnMessage = "What the hell?";
+            returnMessage = "What the hell is that?";
             break;
     }
     return returnMessage;
@@ -145,7 +145,7 @@ function colorPicker () {
  * function to show it to the user.
  */
 
-var colorPrompt  = prompt("What color?");
+var colorPrompt  = prompt("Enter a color?");
 var newColor = analyzeColor(colorPrompt);
 alert(newColor);
 
