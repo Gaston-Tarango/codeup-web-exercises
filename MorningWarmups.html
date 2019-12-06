@@ -120,19 +120,31 @@
         // 4. crocodile - after a while
         // 5 something different - so long
 
-        function seeYouLater(inputString) {
-            if (inputString = "alligator"){
-                return "See You later alligator";
-            } else if (inputString = "crocodile"){
-                return "after a while, crocodile";
-            } else {
-                return "so long";
-            }
-        }
+        // function seeYouLater(inputString) {
+        //     if (inputString = "alligator"){
+        //         return "See You later alligator";
+        //     } else if (inputString = "crocodile"){
+        //         return "after a while, crocodile";
+        //     } else {
+        //         return "so long";
+        //     }
+        // }
+        //
+        // console.log(seeYouLater("alligator")); //See you later alligator!
+        // console.log(seeYouLater("crocodile")); //After a while crocodile!
+        // console.log(seeYouLater("dog")) //So long!
 
-        console.log(seeYouLater("alligator")); //See you later alligator!
-        console.log(seeYouLater("crocodile")); //After a while crocodile!
-        console.log(seeYouLater("dog")) //So long!
+
+        //write a js function that receives another function as a parameter and executes it
+        //then call the function and pass in an anonymous function as an argument
+
+        function functionA(callbackFunction) {
+            callbackFunction();
+        }
+        functionA(function () {
+            alert("it works!")
+        })
+
 
     </script>
 </body>
