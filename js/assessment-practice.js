@@ -116,14 +116,7 @@ console.log(isMoreThanTen("5")); //false
 
 // Define a function named isPositive that accepts an input and returns true or false based on whether the input is above zero. Any non-numeric input should return false.
 
-function isNegative(x) {
-    var x = (parseFloat(x));
-    if ((x < 0) && (typeof x == "number")) {
-        return true
-    } else {
-        return false
-    }
-}
+
 
 
 console.log(isNegative(-2)); //true
