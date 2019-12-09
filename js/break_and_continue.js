@@ -1,7 +1,6 @@
 (function () {
     "use strict";
 
-
     let askForNumber = function () {
         let userInput = prompt("Please enter a number between 1-50");
         if (typeof userInput === "number" && !isNaN(Number(userInput))) {
