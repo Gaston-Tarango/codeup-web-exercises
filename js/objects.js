@@ -63,19 +63,6 @@
     })
 
 
-    // for (let i = 0; i <console.log(shoppers[0].name);
-    //
-    //      var discount = .12;
-    // shoppers.forEach(function(shopper) {
-    //     if (shopper.amount > 200) {
-    //         console.log(shopper.name + ", your amount before the discount is " + shopper.amount + ", your discount is " + shopper.amount * discount + ", and your total after discount is " + (shopper.amount - shopper.amount * discount) + ".")
-    //     } else {
-    //         console.log(shopper.name + ", you are not eligible for a discount. Your amount is " + shopper.amount + ". You actually spend less money if you spend another $20 but suit yourself, nerd.")
-    //     }
-    // }
-
-
-
 
 
     /** TODO:
