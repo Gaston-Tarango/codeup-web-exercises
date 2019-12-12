@@ -83,7 +83,7 @@
             title: "The Walking Drum",
             author: {
                 firstName: "Louis",
-                lastName: "L'amour"
+                lastName: "L'Amour"
             }
         },
         {
@@ -94,10 +94,10 @@
             }
         },
         {
-            title: "Enders Game",
+            title: "Last of the Breed",
             author: {
-                firstName: "Orson",
-                lastName: "Card"
+                firstName: "Louis",
+                lastName: "L'Amour"
             }
         }
     ];
@@ -155,5 +155,28 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+    var createBook = function (title, authorFirstName, authorLastName) {
+        var book = {};
+        book.title = title;
+        book.author = {
+        }
+        book.author.firstName = authorFirstName;
+        book.author.lastName = authorLastName;
+        return book;
+    }
+
+    books.push(createBook("Leviathan", "Scott", "West" ))
+
+    var showBookInfo = function(book, index){
+        console.log("Book # " + (index + 1));
+        console.log("Title: " + book.title);
+        console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+        console.log("---")
+    }
+
+    books.forEach(showBookInfo)
+
+
 
 })();
