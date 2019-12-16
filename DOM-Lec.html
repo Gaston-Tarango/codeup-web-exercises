@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+    <style>
+        .redBackground {
+            background-color: red;
+        }
+        .greenText {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<h1 id = "header">Happy Holidays</h1>
+<h3>Wish List</h3>
+<ul id = wishList>
+    <li class = "odd">Great Career</li>
+    <li class = "even">2 front teeth</li>
+    <li class = "odd">Occulus Quest</li>
+    <li class = "even">Nintendo Switch</li>
+    <li class = "odd">Macbook Pro</li>
+    <li class = "even">Valve Index</li>
+</ul>
+<script>
+    console.log(document)
+    var header = document.getElementById("header")
+    console.log(header)
+
+    var thingsIWant = ["Great Career", "2 front teeth", "Occulus Quest", "Nintendo Switch", "Macbook Pro", "Valve Index"]
+    var evens = document.getElementsByClassName("even");
+    var wishlist = document.getElementById("wishlist");
+    var htmlString = "";
+    for (var i = 0; i<thingsIWant.length;i++){
+        htmlString =+ "<li>" + thingsIWant[i] + "</li>";
+    }
+    // console.log("evens:"+evens);
+    for (var i = 0;i<evens.length;i++){
+        // console.log(evens[i]);
+        evens[i].innerHTML = "<em>Money</em>";
+        console.log(evens[1].innerHTML);
+    }
+    var lis = document.getElementsByTagName("li");
+    console.log(lis);
+    for (var i = 0;i<lis.length;i++){
+        console.log(lis[i]);
+    }
+    var odds =document.getElementsByClassName("odd")
+    for (var i = 0; i<odds.length;i++){
+        odds[i].setAttribute("class", "odd redBackground greenText")
+        // odds[i].style.color = "red";
+        // odds[i].style["background-color"] = "green";
+    }
+</script>
+
+
+
+<!--<h1 id = "header2">IDK WHATS GOING ON</h1>-->
+
+<!--<h3>IS THIS RIGHT?</h3>-->
+
+<!--<ul>-->
+<!--    <li class = "odd">Got Distracted</li>-->
+<!--    <li>Hungover</li>-->
+<!--    <li class = "odd">Sleepy</li>-->
+<!--    <li>Cant find my hat</li>-->
+<!--    <li class = "odd">Cant find my jacket</li>-->
+<!--    <li>Is it naptime yet?</li>-->
+
+<!--</ul>-->
+
+<!--<script>-->
+<!--    console.log(document)-->
+<!--    var header = document.getElementById("header2")-->
+<!--    console.log(header)-->
+
+<!--    var odds = document.getElementsByClassName("odd")-->
+<!--    console.log("odds:"+odds);-->
+<!--    for (var i = 0;i<odds.length;i++){-->
+<!--        console.log(odds[i]);-->
+<!--    }-->
+<!--    var lis = document.getElementsByTagName("li");-->
+<!--    console.log(lis);-->
+<!--    for (var i = 0;i<lis.length;i++){-->
+<!--        console.log(lis[i]);-->
+<!--    }-->
+<!--</script>-->
+
+</body>
+</html>
