@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>DOM</title>
+<!--    ANOTHER DANIEL LESSON-->
     <style>
         .redBackground {
             background-color: red;
@@ -10,11 +11,19 @@
         .greenText {
             color: green;
         }
+        .purple {
+            color:purple;
+        }
+        .cyan {
+            color: cyan;
+        }
     </style>
 </head>
 <body>
 <h1 id = "header">Happy Holidays</h1>
+<button id = button>Click Me</button>
 <h3>Wish List</h3>
+
 <ul id = wishList>
     <li class = "odd">Great Career</li>
     <li class = "even">2 front teeth</li>
@@ -52,6 +61,27 @@
         // odds[i].style.color = "red";
         // odds[i].style["background-color"] = "green";
     }
+
+    var clicks = 0;
+    var button = document.getElementById("button")
+    button.addEventListener("click",function () {
+        clicks++;
+        alert("button was clicked " + clicks + " times")
+    })
+    button.addEventListener("mouseover", function () {
+        button.setAttribute("class", "purple");    // THis daniels way needs class and style up top
+    })
+    button.addEventListener("mouseout", function () {
+        button.style.color = "cyan";           // This is another way
+    })
+
+    // Random out in the weeds thing doesnt work
+    // setTimeout(function () {
+    //     button.removeEventListener("click", "button")
+    // }, 5000)
+
+
+
 </script>
 
 
