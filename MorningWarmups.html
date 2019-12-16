@@ -150,15 +150,25 @@
         // and returns true if tbe param is found in the array
         // there is an easy way, but do the loop way first
 
-        var contains = function (arr, param) {
-            // return arr.includes(param); this is the short version
-            for (var i = 0; i< arr.length;i++){
-                if (arr[i] === param) return true;
+        // var contains = function (arr, param) {
+        //     // return arr.includes(param); this is the short version
+        //     for (var i = 0; i< arr.length;i++){
+        //         if (arr[i] === param) return true;
+        // }
+        //     return false
+        // }
+        // console.log(contains([1,2,3], 3));
+        // console.log(contains([1,2,3], 4));
+
+
+
+        var santa = {
+            name:"Santa Claus",
+            niceList:["fer", "vivian", "david"],
+            sayHello: function () {
+                return "Merry Christmas!"
+            }
         }
-            return false
-        }
-        console.log(contains([1,2,3], 3));
-        console.log(contains([1,2,3], 4));
 
     </script>
 </body>
