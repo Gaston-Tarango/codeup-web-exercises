@@ -1,3 +1,4 @@
+
 // TODO Problem 1 - 'Sum Array' from Code Wars
 // Write a method named sum that takes an array of numbers and returns the sum of the numbers. These may be integers or decimals. The numbers can also be negative. If the array does not contain any numbers then you should return 0.
 
@@ -10,28 +11,69 @@
 // You cannot assume the size of the array.
 // You can assume that you do get an array and if the array is empty, return 0.
 
+//           FOR LOOP METHOD
+// function sum (numbers) {
+//     var sum = 0;
+//     for (let i = 0; i < numbers.length; i++) {
+//         sum+= numbers[i];
+//     }
+//     return sum;
+// }
+
+       // WHILE LOOP METHOD
 function sum(numbers) {
-
-
+    var i = 0;
+    var sum = 0;
+    while (i < numbers.length) {
+        sum+= numbers[i];
+        i++;
+    }
+    return sum;
 }
 
+//                FOR EACH METHOD
+// numbers.forEach(function (item) {
+//     sum += item;
+// })
+//
 
-// console.log(sum([1, 5.2, 4, 0, -1])); // outputs 9.2
-// console.log(sum([2, 3, 4, 5, 6])); // outputs 20
-// console.log(sum([10.5, 50.3, -100, 77.7, 230])); // output 268.5
+console.log(sum([1, 5.2, 4, 0, -1])); // outputs 9.2
+console.log(sum([2, 3, 4, 5, 6])); // outputs 20
+console.log(sum([10.5, 50.3, -100, 77.7, 230])); // output 268.5
 
 // TODO Problem 2 - 'Remove String Spaces' from Code Wars
 // Simple, remove the spaces from the string, then return the resultant string.
 
 
-function noSpace(x) {
 
+function noSpace(x){
+    var xArray = x.split("");
+    var returnArray = [];
+    console.log(xArray);
+    for (var i = 0; i < xArray.length; i++) {
+        // check to see if each index is equal to empty space, if it isn't then we can push to the return array.
+        if (xArray[i] !== " ") {
+            returnArray.push(xArray[i]);
+        }
+    }
+    return returnArray.join("");
 }
 
 
-// console.log(noSpace('8 j 8   mBliB8g  imjB8B8  jl  B')); // output '8j8mBliB8gimjB8B8jlB'
-// console.log(noSpace('8 8 Bi fk8h B 8 BB8B B B  B888 c hl8 BhB fd')); // output '88Bifk8hB8BB8BBBB888chl8BhBfd'
-// console.log(noSpace('8aaaaa dddd r     ')); // output '8aaaaaddddr'
+function noSpace(x) {
+    return x.split(" ").join("");
+}
+
+
+function noSpace(x){
+    return x.replace(/ /g, '');
+}
+
+
+
+console.log(noSpace('8 j 8   mBliB8g  imjB8B8  jl  B')); // output '8j8mBliB8gimjB8B8jlB'
+console.log(noSpace('8 8 Bi fk8h B 8 BB8B B B  B888 c hl8 BhB fd')); // output '88Bifk8hB8BB8BBBB888chl8BhBfd'
+console.log(noSpace('8aaaaa dddd r     ')); // output '8aaaaaddddr'
 
 // TODO Problem 3 - 'Numbers to Letters' on Code Wars
 // Given an array of numbers, you must return a string. The numbers correspond to the letters of the alphabet in reverse order: a=26, z=1 etc. You should also account for '!', '?' and ' ' that are represented by '27', '28' and '29' respectively.
@@ -39,13 +81,25 @@ function noSpace(x) {
 // All inputs will be valid.
 
 
-function switcher(x) {
+function switcher(x){
+    var alphabet = " ?!abcdefghijklmnopqrstuvwxyz ";
+    var reverseAlphabetArray = alphabet.split("").reverse();
+    var returnString = "";
 
+    // Loop through array. Each argument passed in will be used as 'positionInput' for the reverseAlphabetArray
+    x.forEach(function(positionInput) {
+        returnString += reverseAlphabetArray[positionInput];
+    });
+    return returnString;
 }
 
-// console.log(switcher(['24', '12', '23', '22', '4', '26', '9', '8'])); // outputs 'codewars'
-// console.log(switcher(['25','7','8','4','14','23','8','25','23','29','16','16','4'])); // outputs 'btswmdsbd kkw'
-// console.log(switcher(['4', '24'])); // outputs 'wc'
+// for (var i = 0; i < x.length; i++){
+//     returnString += reverseAlphabetArray[x[i]];
+// }
+
+console.log(switcher(['24', '12', '23', '22', '4', '26', '9', '8'])); // outputs 'codewars'
+console.log(switcher(['25','7','8','4','14','23','8','25','23','29','16','16','4'])); // outputs 'btswmdsbd kkw'
+console.log(switcher(['4', '24'])); // outputs 'wc'
 
 
 //  TODO Problem 4 - 'Convenience Store' on Edabit
@@ -64,7 +118,9 @@ function switcher(x) {
 // penny: 1 cent / $0.01
 
 function changeEnough(change, amountDue) {
-
+    var totalChange;
+    totalChange = (change[0] * .25) + (change[1] * .10) + (change[2] * .05) + (change[3] * .01);
+    return (totalChange >= amountDue);
 }
 
 console.log(changeEnough([2, 100, 0, 0], 14.11)); // outputs false
@@ -85,10 +141,8 @@ console.log(changeEnough([1, 0, 5, 219], 19.99)); // outputs false
 // Remember that the values are in an object.
 
 function volumeOfBox(sizes) {
-
+    return sizes.width * sizes.height * sizes.length;
 }
-
-
 
 console.log(volumeOfBox({width: 2, length: 5, height: 1})); // outputs 10
 console.log(volumeOfBox({width: 4, length: 2, height: 2})); // outputs 16
@@ -107,10 +161,11 @@ console.log(volumeOfBox({width: 2, length: 3, height: 5})); // outputs 30
 // ➞ [["key1", "key2", "key3"], [true, false, undefined]]
 
 function keysAndValues(obj) {
+    var keys = Object.keys(obj);
+    var values = Object.values(obj);
 
+    return [keys, values];
 }
-
-
 
 console.log(keysAndValues({a: 1, b: 2, c: 3})); // outputs [["a", "b", "c"], [1, 2, 3]]
 console.log(keysAndValues({a: "Apple", b: "Microsoft", c: "Google"})); // outputs [["a", "b", "c"], ["Apple", "Microsoft", "Google"]]
@@ -136,8 +191,19 @@ console.log(keysAndValues({key1: true, key2: false, key3: undefined})); // outpu
 // Notes
 // All ages will be different.
 
-let oldest = function (people) {
+var oldest = function(people) {
+    var oldestAge = 0;
+    var oldestAgeName = "";
+    var nameArray = Object.keys(people);
+    var ageArray = Object.values(people);
 
+    for (var i = 0; i < ageArray.length; i++) {
+        if (ageArray[i] > oldestAge) {
+            oldestAge = ageArray[i];
+            oldestAgeName = nameArray[i];
+        }
+    }
+    return oldestAgeName;
 };
 
 
@@ -182,10 +248,37 @@ Anne: 33
 // ]) ➞ 3
 
 function longestStreak(arr) {
+    var milliSecsInDay = 86400000;
+    var difference;
+    var currentDate;
+    var previousDate;
+    var consecutiveDays = 1;
+    var maxConsecutiveDays = 1;
 
+    // Returns 0, if an empty array is passed
+    if (arr.toString() === "") {
+        return 0;
+    }
+
+    for (var i = 1; i < arr.length; i++) {
+        //Converts the strings into actual date objects. The return is in milliseconds.
+        currentDate = Date.parse(arr[i].date);
+        previousDate = Date.parse(arr[i - 1].date);
+        difference = (currentDate - previousDate) / milliSecsInDay;
+
+        if (difference !== 1) {
+            // If the difference isn't 1, the consecutive days have ended. Reset consecutiveDays back to 1.
+            consecutiveDays = 1;
+        } else if (difference === 1) {
+            // If it is 1, then we can increment and track the max consecutiveDays.
+            consecutiveDays++;
+            if (consecutiveDays > maxConsecutiveDays) {
+                maxConsecutiveDays = consecutiveDays;
+            }
+        }
+    }
+    return maxConsecutiveDays;
 }
-
-
 
 console.log(longestStreak([
 {
@@ -209,3 +302,5 @@ console.log(longestStreak([
 ])); // outputs 3
 
 console.log(longestStreak([])); // outputs 0
+
+
