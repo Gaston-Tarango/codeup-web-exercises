@@ -4,11 +4,156 @@
     <meta charset="UTF-8">
     <title>Mapbox</title>
 </head>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+<style>
+    #map {
+
+        width: 100%;
+        height: 600px;
+    }
+</style>
 <body>
+<button id = "btn1">Zoom 5</button>
+<button id = "btn2">Zoom 15</button>
+<button id = "btn3">Zoom 20</button>
+<button id = "btn4">Dairy Mart</button>
+<button id = "btn5">1718 Steakhouse</button>
+<button id = "btn6">Mr.Wong</button>
+
+<div id='map'></div>
+
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
 <script src="js/keys.js"></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
 
+<script>
+    mapboxgl.accessToken = mapboxToken;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/navigation-guidance-day-v4',
+        zoom: 1,
 
+
+    });
+
+    // geocode("920 W 3rd St, Pecos, TX 79772", mapboxToken).then(function (result) {
+    //     console.log(result);
+    //     map.jumpTo(result)
+    //
+    //     // map.setZoom(17)
+    // });
+    //
+    // var markerOptions = {
+    //     color: "red",
+    //     // draggable: true,
+    //     center: [-103.503831, 31.422373]
+    //
+    //
+    // };
+    // var marker = new mapboxgl.Marker(markerOptions)
+    //     .setLngLat([-103.503831, 31.422373])
+    //     .addTo(map);
+    // var dairyMart = new mapboxgl.Popup()
+    //     .setHTML("<p>Dairy Mart</p>")
+    //     .addTo(map);
+    //
+    // marker.setPopup(dairyMart)
+    // marker.togglePopup(dairyMart)
+    //
+    //      // 2nd Restaurant
+    //
+    // geocode("321 Alamo Plaza #300, San Antonio, TX 78205", mapboxToken).then(function (result) {
+    //     console.log(result);
+    //     map.jumpTo(result)
+    //     // map.setZoom(20)
+    // });
+    // var markerOptions2 = {
+    //     color: "blue",
+    //     center: [-98.487044, 29.425863]
+    //
+    // };
+    // var marker2 = new mapboxgl.Marker(markerOptions2)
+    //
+    //     .setLngLat([-98.487044, 29.425863])
+    //     .addTo(map);
+    // var steakHouse = new mapboxgl.Popup()
+    //     .setHTML("<p>1718 Steakhouse</p>")
+    //     .addTo(map);
+    //
+    // marker2.setPopup(steakHouse)
+    // marker2.togglePopup(steakHouse)
+    //
+    //    // 3rd Restaurant
+    //
+    // geocode("3 Bridge Ln, Sydney NSW 2000, Australia", mapboxToken).then(function (result) {
+    //     console.log(result);
+    //     map.jumpTo(result)
+    // });
+    // var markerOptions3 = {
+    //     color: "orange",
+    //     center: [151.207574, -33.863732]
+    //
+    // };
+    // var marker3 = new mapboxgl.Marker(markerOptions3)
+    //
+    //     .setLngLat([151.207574, -33.863732])
+    //     .addTo(map);
+    // var chineseFood = new mapboxgl.Popup()
+    //     .setHTML("<p>Mr.Wong</p>")
+    //     .addTo(map);
+    //
+    // marker3.setPopup(chineseFood)
+    // marker3.togglePopup(chineseFood)
+
+    var restaurants = [
+        {
+            name: "<h2>Dairy Mart</h2><br><p>Best Frito Burger</p>",
+            address: "920 W 3rd St, Pecos, TX 79772"
+        },
+        {
+            name: "<h2>1718 Steakhouse</h2><br><p>Great Steakhouse</p>",
+            address: "321 Alamo Plaza #300, San Antonio, TX 78205"
+        },
+        {
+            name: "<h2>Mr. Wongs</h2><p>Chinese Restuarant</p>",
+            address: "3 Bridge Ln, Sydney NSW 2000, Australia"
+        }
+    ];
+    restaurants.forEach(function(restaurant) {
+        geocode(restaurant.address, mapboxToken).then(function(result) {
+            var popUp = new mapboxgl.Popup()
+                .setHTML(restaurant.name)
+                .addTo(map);
+            var marker = new mapboxgl.Marker()
+                .setLngLat(result)
+                .setPopup(popUp)
+                .addTo(map);
+            console.log(restaurant);
+        });
+    });
+
+    btn1.addEventListener("click", function () {
+        map.setZoom(5);
+    });
+    btn2.addEventListener("click", function () {
+        map.setZoom(15);
+    });
+    btn3.addEventListener("click", function () {
+        map.setZoom(20);
+    });
+    btn4.addEventListener("click", function () {
+        map.setZoom(15);
+        map.setCenter([-103.503831, 31.422373])
+    });
+    btn5.addEventListener("click", function () {
+        map.setZoom(15);
+        map.setCenter([-98.487044, 29.425863])
+    });
+    btn6.addEventListener("click", function () {
+        map.setZoom(15);
+        map.setCenter([151.207574, -33.863732])
+    });
+
+</script>
 </body>
 </html>
