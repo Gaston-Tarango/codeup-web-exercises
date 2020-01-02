@@ -105,6 +105,7 @@ console.log(StringLength("doggo"))
 
 //write a function that accepts a string and returns an object with the original string, the length of the string, as well as the number of a's and b's
 
+
 function analyzeWord(str) {
     var word = {};
     word.word = str;
