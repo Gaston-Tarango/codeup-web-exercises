@@ -36,29 +36,32 @@
     (function () {
         "use strict";
         $(document).ready(function () {
-            //our JQuery code goes here
-            // alert("look, we are using JQuery")
-          // document.getElementsById("button").addEventListener("click", function () {
-          //       alert("You clicked the button")
-          // })
-          //   $("#button").click(function () {
-          //       alert("you clicked the button")
-          //   })
-            // var listItems = document.getElementsByClassName("li");
-            // for (var = i; i<=listItems.length;i++){
-            //     listItems[i].setAttribute("class")
-            // }
-            // $("li").addClass("purple");
-            // $("school").addClass("red");
-            $("li").css('font-size', '20px');
+
+            // $("li").css('font-size', '20px');
             // $("#main-header").css('background-color', 'yellow');
             // $("p").css('background-color', 'yellow');
             // $("li").css('background-color', 'yellow');
-            $("button").click(function () {
-                alert("JQuery")
-            });
-            $("li, p, #main-header").css('background-color', 'yellow');
+            //
+            //     $('#main-header').dblclick(function () {
+            //         alert('JQuery title was double clicked');
+            //     });
 
+            // $("li, p, #main-header").css('background-color', 'yellow');
+
+            $('#main-header').click(function () {
+                $(this).css('background-color', 'red')
+            });
+                $('p').dblclick(function () {
+                    $(this).css('font-size', '18px')
+                });
+            $('li').hover(
+                function() {
+                    $(this).css('color', 'red');
+                },
+                function() {
+                    $(this).css('color', 'black');
+                }
+            );
         })
     })();
 </script>
