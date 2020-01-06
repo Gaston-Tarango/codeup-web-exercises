@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery Exercise</title>
+</head>
+<body>
+<style>
+    /*.school {*/
+    /*    color: red;*/
+    /*}*/
+    /*.work {*/
+    /*    color: blue;*/
+    /*}*/
+    /*.important {*/
+    /*    size: 20px;*/
+    /*}*/
+</style>
+<h1 id ="main-header">Jquery</h1>
+<h3>New Years Resolution</h3>
+<p>Stuff for paragraph written here</p>
+<ul id="resolutions">
+    <li class="school">Finish class</li>
+    <li class="work">Find a Job</li>
+    <li class="important">Be able to follow at least one of daniel's lessons!</li>
+</ul>
+<form name="resForm" action="">
+    <div>
+        <label for="goal">What do you want to do this year?</label>
+        <input id="goal" name="goal" type ="text">
+    </div>
+    <button id="button">Click Me!</button>
+</form>
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<script>
+    (function () {
+        "use strict";
+        $(document).ready(function () {
+            //our JQuery code goes here
+            // alert("look, we are using JQuery")
+          // document.getElementsById("button").addEventListener("click", function () {
+          //       alert("You clicked the button")
+          // })
+          //   $("#button").click(function () {
+          //       alert("you clicked the button")
+          //   })
+            // var listItems = document.getElementsByClassName("li");
+            // for (var = i; i<=listItems.length;i++){
+            //     listItems[i].setAttribute("class")
+            // }
+            // $("li").addClass("purple");
+            // $("school").addClass("red");
+            $("li").css('font-size', '20px');
+            // $("#main-header").css('background-color', 'yellow');
+            // $("p").css('background-color', 'yellow');
+            // $("li").css('background-color', 'yellow');
+            $("button").click(function () {
+                alert("JQuery")
+            });
+            $("li, p, #main-header").css('background-color', 'yellow');
+
+        })
+    })();
+</script>
+
+</body>
+</html>
+
