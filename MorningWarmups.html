@@ -255,17 +255,28 @@
 //         }
 // console.log(getGoldReindeer(reindeerList))
 
-        function getGoldReindeer(reindeerArray) {
-            var bucket = [];
-            reindeerArray.forEach(function (reindeer) {
-                if (reindeer.isGold === true){
-                    bucket.push(reindeer)
-                }
+        // function getGoldReindeer(reindeerArray) {
+        //     var bucket = [];
+        //     reindeerArray.forEach(function (reindeer) {
+        //         if (reindeer.isGold === true){
+        //             bucket.push(reindeer)
+        //         }
+        //
+        //     });
+        //     return bucket
+        // }
+        // console.log(getGoldReindeer(reindeerList))
 
-            });
-            return bucket
+        function fizzbuzz(num) {
+            for (var i = 1; i<= 100; i++){
+                if (i % 15 ===0) console.log("Fizzbuzz")
+                    else if (i % 3 ===0)console.log("Fizz")
+                        else if (i % 5 ===0)console.log("buzz")
+                else console.log(i)
+            }
         }
-        console.log(getGoldReindeer(reindeerList))
+
+
     </script>
 </body>
 </html>
