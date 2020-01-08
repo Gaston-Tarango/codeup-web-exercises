@@ -2,17 +2,46 @@
 <html>
 <head>
     <title>Konami Code</title>
+
+    <style>
+        #main-header {
+            text-align: center;
+            color: white;
+        }
+        #main-body {
+            background-image: url("img/flynns.gif");
+            background-size: cover;
+        }
+    </style>
 </head>
-<body>
-<h1>Konami Code</h1>
+<body id = main-body>
+<h1 id = main-header>Konami Code</h1>
+
+<img src="" style="width: 100%">
 
 <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 <script>
-    "use strict";
+    var pattern = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+    var current = 0;
 
-    $(document).keyup(function(event){
-        console.log(event.keyCode);
-    });
+    var keyHandler = function (event) {
+
+        if (pattern.indexOf(event.key) < 0 || event.key !== pattern[current]) {
+            current = 0;
+        }
+
+        current++;
+
+        if (pattern.length === current) {
+            current = 0;
+            window.alert('Great job! You found it CHEATER!');
+        }
+
+    };
+
+    document.addEventListener('keydown', keyHandler, false);
+
+
 </script>
 </body>
 </html>
