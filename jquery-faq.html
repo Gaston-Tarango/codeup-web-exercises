@@ -20,9 +20,9 @@
 </head>
 <body>
 <div>
-    <h1>Would you like to sign up for our newsletter?</h1>
+    <h1>Would you like to sign up for our newsletter? <span>x</span></h1>
 </div>
-<h2>FAQ's about National Parks</h2>
+<h1>FAQ's about National Parks</h1>
 <dl>
     <dt>Where is National Park with the largest cave system?</dt>
     <dd class="invisible">Mammoth National Park in Kentucky is the longest recorded cave system in the world, more than 336 miles.</dd>
@@ -92,7 +92,7 @@
 <script>
     "use strict";
     $(document).ready(function() {
-        $('h2').append('<p>Answers</p>');
+        $('h1').last().append('<p>Answers</p>');
         $('p').addClass('toggle');
         $('.toggle').click(function () {
             $('dd').toggleClass('invisible');
@@ -102,15 +102,29 @@
         });
         $('h3').click(function() {
             $(this).next().children().toggleClass('bold')
+            $(this).next().slideToggle('invisible')
         });
+
+        $('ul').hide();
+
         $('li').click(function() {
             $(this).parent().children().first().toggleClass('blue')
         });
+
         $('button').click(function() {
             $('ul').each(function() {
                 $(this).children().last().toggleClass('highlighted')
             })
         });
+
+        $('span').click(function () {
+            $(this).parent().toggleClass('invisible')
+        });
+
+        function fade() {
+            $('body').hide().html('<h2>Please register to continue using the site.</h2>').fadeIn()
+        }
+        setTimeout(fade, 8000)
 
     })
 </script>
