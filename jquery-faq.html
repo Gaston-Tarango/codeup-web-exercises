@@ -13,62 +13,103 @@
         .bold {
             font-weight: bold;
         }
+        .blue {
+            color: blue;
+        }
     </style>
 </head>
 <body>
-<h1>FAQ's about National Parks</h1>
+<div>
+    <h1>Would you like to sign up for our newsletter?</h1>
+</div>
+<h2>FAQ's about National Parks</h2>
 <dl>
     <dt>Where is National Park with the largest cave system?</dt>
-    <dd>Mammoth National Park in Kentucky is the longest recorded cave system in the world, more than 336 miles.</dd>
+    <dd class="invisible">Mammoth National Park in Kentucky is the longest recorded cave system in the world, more than 336 miles.</dd>
     <br>
 
     <dt>Which national park protects the tallest mountain in the contiguous 48 states?</dt>
-    <dd>Sequoia and Kings Canyon National Parks</dd>
+    <dd class="invisible">Sequoia and Kings Canyon National Parks</dd>
     <br>
 
     <dt>What Spanish explorer is credited with discovering the Grand Canyon in 1540?</dt>
-    <dd>Garcia Lopez de Cardenas</dd>
+    <dd class="invisible">Garcia Lopez de Cardenas</dd>
     <br>
 
     <dt>What feature is unique about Grand Canyon rattlesnakes?</dt>
-    <dd>They are pink so they blend in with the reddish dirt of the canyon.</dd>
+    <dd class="invisible">They are pink so they blend in with the reddish dirt of the canyon.</dd>
     <br>
 
     <dt>What is the southernmost U.S. national park?</dt>
-    <dd>National Park of American Samoa</dd>
+    <dd class="invisible">National Park of American Samoa</dd>
     <br>
 
     <dt>Which national park protects the tallest volcano in the lower 48?</dt>
-    <dd>Mount Rainier National Park</dd>
+    <dd class="invisible">Mount Rainier National Park</dd>
     <br>
 
     <dt>When was the most recent volcanic eruption within Yellowstone park?</dt>
-    <dd>600,000 years ago,It spewed out nearly 240 cubic miles of debris and a 28 by 47-mile caldera was formed.</dd>
+    <dd class="invisible">600,000 years ago,It spewed out nearly 240 cubic miles of debris and a 28 by 47-mile caldera was formed.</dd>
     <br>
 
     <dt>What is the largest national park site?</dt>
-    <dd>Wrangell-St. Elias National Park and Preserve, AK, at 13.2 million acres</dd>
+    <dd class="invisible">Wrangell-St. Elias National Park and Preserve, AK, at 13.2 million acres</dd>
     <br>
 
     <dt>Smallest?</dt>
-    <dd>Smallest: Thaddeus Kosciuszko National Memorial, PA, at 0.02 acres</dd>
+    <dd class="invisible">Smallest: Thaddeus Kosciuszko National Memorial, PA, at 0.02 acres</dd>
     <br>
 
     <dt>Where is the worlds largest spring fed swimming pool?</dt>
-    <dd>In Balmorhea State Park.</dd>
+    <dd class="invisible">In Balmorhea State Park.</dd>
 </dl>
+
+<h3 id="national-parks-heading">National Parks</h3>
+<ul id="national-parks">
+    <li>Arches</li>
+    <li>Badlands</li>
+    <li>Carlsbad Caverns</li>
+    <li>Denali</li>
+</ul>
+<h3>State Parks of Texas</h3>
+<ul id="state-parks-texas">
+    <li>Abilene</li>
+    <li>Big Bend</li>
+    <li>Choke Canyon</li>
+    <li>Davis Mountains</li>
+</ul>
+<h3>State Parks</h3>
+<ul id="parks">
+    <li>Places</li>
+    <li>To</li>
+    <li>Go</li>
+    <li>Visit</li>
+</ul>
+
+<button>Click Me!</button>
 
 <script src="js/jquery-2.2.4.js"></script>
 <script>
     "use strict";
     $(document).ready(function() {
-        $('h1').append('<p>Answers</p>');
+        $('h2').append('<p>Answers</p>');
         $('p').addClass('toggle');
         $('.toggle').click(function () {
             $('dd').toggleClass('invisible');
         });
         $('dt').click(function() {
             $(this).toggleClass('highlighted')
+        });
+        $('h3').click(function() {
+            $(this).next().children().toggleClass('bold')
+        });
+        $('li').click(function() {
+            $(this).parent().children().first().toggleClass('blue')
+        });
+        $('button').click(function() {
+            $('ul').each(function() {
+                $(this).children().last().toggleClass('highlighted')
+            })
         });
 
     })
