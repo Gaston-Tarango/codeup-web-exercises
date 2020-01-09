@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Lec</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <h1>AJAX</h1>
+</head>
+<body>
+<script>
+// Daniel Lesson have to figure out later
+
+
+$("pokemon") .ready(function(){
+    $.ajax("https://pokeapi.co/api/v2/pokemon/2/")
+        .done(function (resp) {
+            console.log(resp.name);
+})
+})
+
+
+
+
+
+</script>
+</body>
+</html>
