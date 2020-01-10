@@ -30,5 +30,26 @@
             "tool"
         ],
         "price": 10
-    }
+    }, {
+        "title": "SkyHook",
+        "quantity": 3,
+        "categories": [
+            "tool"
+        ],
+        "price": 250
+    }, {
+    "title": "Bubble Water",
+    "quantity": 7,
+    "categories": [
+        "tool"
+    ],
+    "price": 15
+}, {
+    "title": "Left hand Pipe Wrench",
+    "quantity": 4,
+    "categories": [
+        "tool"
+    ],
+    "price": 125
+}
 ]
