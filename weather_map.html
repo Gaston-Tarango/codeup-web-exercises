@@ -11,18 +11,15 @@
         .jumbotron {
             background-color: black;
             text-align: center;
-            color: white;
+            color: whitesmoke;
             height: 200px;
-        }
-        body {
-            min-width: 360px;
         }
         ul {
             padding: 0;
             height: 100%;
         }
         li {
-            color: ghostwhite;
+            color: whitesmoke;
         }
         .card {
             height: 100%
@@ -39,7 +36,7 @@
             background-color: black;
         }
         .card {
-            background-color: #1C2E3B;
+            background-color: steelblue;
         }
 
         .card-title {
@@ -48,7 +45,7 @@
 
         #location {
             margin-bottom: 1em;
-            color: white;
+            color: whitesmoke;
             padding-top: 2em;
         }
         #map {
@@ -56,14 +53,12 @@
             height: 400px;
         }
 
-
-
     </style>
 </head>
 <body>
 <div class="jumbotron jumbotron-fluid mb-0" >
     <div class="container">
-        <h1 class="display-4">Weather Exercise</h1>
+        <h1 class="display-4">Weather for Places</h1>
     </div>
 </div>
 <div class="ldBar">
@@ -95,34 +90,38 @@
     //Variables for Dark Sky
     var weather = $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/29.4241,-98.4936");
 
-    var conditions = [{
-        "clear-day": '<img src="img/Sun.svg" alt="sun">'}, {
-        "clear-night": '<img src="img/Moon.svg" alt="moon">'}, {
-        "rain": '<img src="img/Umbrella.svg" alt="rain">'}, {
-        "snow": '<img src="img/Snowflake.svg" alt="snow">'}, {
-        "sleet": '<img src="img/Cloud-Hail.svg" alt="sleet">'}, {
-        "wind": '<img src="img/Wind.svg" alt="wind">'}, {
-        "fog": '<img src="img/Cloud-Fog.svg" alt="fog">'}, {
-        "cloudy": '<img src="img/Cloud.svg" alt="cloudy">'}, {
-        "partly-cloudy-day": '<img src="img/Cloud-Sun.svg" alt="partly-cloudy-day">'}, {
-        "partly-cloudy-night": '<img src="img/Cloud-Moon.svg" alt="partly-cloudy-night">'
-    }];
+    var conditions = [
+        {"clear-day": '<img src="img/Sun.svg" alt="sun">'},
+        {"clear-night": '<img src="img/Moon.svg" alt="moon">'},
+        {"rain": '<img src="img/Umbrella.svg" alt="rain">'},
+        {"snow": '<img src="img/Snowflake.svg" alt="snow">'},
+        {"sleet": '<img src="img/Cloud-Hail.svg" alt="sleet">'},
+        {"wind": '<img src="img/Wind.svg" alt="wind">'},
+        {"fog": '<img src="img/Cloud-Fog.svg" alt="fog">'},
+        {"cloudy": '<img src="img/Cloud.svg" alt="cloudy">'},
+        {"partly-cloudy-day": '<img src="img/Cloud-Sun.svg" alt="partly-cloudy-day">'},
+        {"partly-cloudy-night": '<img src="img/Cloud-Moon.svg" alt="partly-cloudy-night">'}
+    ];
 
-    var texts = [{
-        "clear-day": 'Plain and boring. Go outside or something mooseknuckle'}, {
-        "clear-night": 'Clear night sky take shot for every star you can see'}, {
-        "rain": 'Mother Nature can suck it with all this rain'}, {
-        "snow": 'Thats not cocaine falling from the sky unfortunately'}, {
-        "sleet": 'Mother Nature is laughing at your misery'}, {
-        "wind": 'Mother Nature is farting on you'}, {
-        "fog": 'The fog hopes you wreck and die while you drive'}, {
-        "cloudy": 'NO SUN FOR YOU'}, {
-        "partly-cloudy-day": 'just eh weather'}, {
-        "partly-cloudy-night": 'just eh weather'
-    }]
+    var texts = [
+        {"clear-day": ['Plain and boring', 'Go outside or something mooseknuckle', 'Its a great day for naps', 'Oh the suns out want a ribbon for it or what?']},
+        {"clear-night": ['Clear night sky, take shot for every star you can see', 'Perfect night to go ghost hunting', 'Good night to play cards with hobo\'s', 'Its a boring night. What do you want from me? And you better not say world peace you hippie']},
+        {"rain": ['Mother Nature can suck it with all this rain', 'oh boo hoo its raining get over it', 'Harden up its just a lil sprinkle', 'It could be worse, it could be raining harder']},
+        {"snow": ['That\'s not cocaine falling from the sky unfortunately', 'Oh look cold water is falling from the sky', 'What if snow is actually god scratching his dandruff?', 'Hopefully it snows enough have an excuse to call in, or just call in anyway']},
+        {"sleet": ['Mother Nature is laughing at your misery', 'Its just crap outside', 'Mother nature make up your mind either rain or snow not both', 'So the weather sucks drink a beer and drive to work']},
+        {"wind": ['Mother Nature is farting on you', 'Hopefully a duck gets blown into your face you deserve it', 'Jump in the air see you can fly fatty', 'Get ready for a bad hair day or what everyone thinks is your usual look']},
+        {"fog": ['Why dont you go and fog off', 'The fog want you to drive it doesn\'t like you', 'Fog is just fat clouds that can\'t float', 'Is it fog or mist? Doesn\'t matter both are stupid']},
+        {"cloudy": ['NO SUN FOR YOU!', 'The clouds are stacked nuts to butts up there', 'Try and find the cloud that looks like Derek Zoolander', 'We get it Mother Nature you vape']},
+        {"partly-cloudy-day": ['Blah blah blah just average weather', 'Could be worse we could be in SE Australia', 'Perfect day to go fishing with dynamite', 'Oh look its nap weather']},
+        {"partly-cloudy-night": ['Perfect weather to summon a demon or whatever', 'Cool night clouds', 'Let me tell you about constellations you can\'t see because of the stupid clouds', 'Its a fine night other than the clouds. Stupid clouds always just floating there']}
+        ]
     var high;
     var low;
+
     //This function creates the weather cards
+    function getNumber() {
+        return Math.ceil(Math.random() * 3);
+    }
     function createWeather() {
         weather.done(function (data) {
             $('#insertWeather').html("");
@@ -136,43 +135,43 @@
                 switch (data.daily.data[i].icon) {
                     case "clear-day":
                         condition = conditions[0]["clear-day"];
-
+                        text = texts[0]["clear-day"][getNumber()]
                         break;
                     case "clear-night":
-                        condition = conditions[1]["clear-night"];
-                        text = texts[1]["clear-night"]
+                        condition = conditions[1]["clear-night"]
+                        text = texts[1]["clear-night"][getNumber()];
                         break;
                     case "rain":
                         condition = conditions[2]["rain"]
-                        text = texts[2]["rain"]
+                        text = texts[2]["rain"][getNumber()];
                         break;
                     case "snow":
-                        condition = conditions[3]["snow"];
-                        text = texts[3]["snow"]
+                        condition = conditions[3]["snow"]
+                        text = texts[3]["snow"][getNumber()];
                         break;
                     case "sleet":
-                        condition = conditions[4]["sleet"];
-                        text = texts[4]["sleet"]
+                        condition = conditions[4]["sleet"]
+                        text = texts[4]["sleet"][getNumber()];
                         break;
                     case "wind":
-                        condition = conditions[5]["wind"];
-                        text = texts[5]["wind"]
+                        condition = conditions[5]["wind"]
+                        text = texts[5]["wind"][getNumber()];
                         break;
                     case "fog":
-                        condition = conditions[6]["fog"];
-                        text = texts[6]["fog"]
+                        condition = conditions[6]["fog"]
+                        text = texts[6]["fog"][getNumber()];
                         break;
                     case "cloudy":
-                        condition = conditions[7]["cloudy"];
-                        text = texts[7]["cloudy"]
+                        condition = conditions[7]["cloudy"]
+                        text = texts[7]["cloudy"][getNumber()];
                         break;
                     case "partly-cloudy-day":
-                        condition = conditions[8]["partly-cloudy-day"];
-                        text = texts[8]["partly-cloudy-day"]
+                        condition = conditions[8]["partly-cloudy-day"]
+                        text = texts[8]["partly-cloudy-day"][getNumber()];
                         break;
                     case "partly-cloudy-night":
-                        condition = conditions[9]["partly-cloudy-night"];
-                        text = texts[9]["partly-cloudy-night"]
+                        condition = conditions[9]["partly-cloudy-night"]
+                        text = texts[9]["partly-cloudy-night"][getNumber()];
                         break;
                     default:
                         condition = '<img src="img/Sun-Low.svg" alt="default">'
@@ -185,20 +184,11 @@
     }
     createWeather();
 
-    //Changes Temperature Display.
-    $('ul').children().first().click(function() {
-        high = (high - 32) * (5 / 9);
-        low = (high - 32) * (5 / 9);
-        console.log(this)
-        $(this).html('<li>' + high + "° / " + low + '°' + '</li>')
-    });
-
-
     // Create Map
     mapboxgl.accessToken = mapboxToken;
     var map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/navigation-preview-night-v2',
+        style: 'mapbox://styles/mapbox/dark-v10',
         zoom: 3,
     });
 
@@ -207,18 +197,18 @@
     };
     var marker = new mapboxgl.Marker(markerOptions);
     var newLngLat;
-    //Creates initial marker
 
-    geocode("San Antonio, TX", mapboxToken).then(function(sanAnResult) {
-        map.setCenter(sanAnResult);
+    //Create marker
+    geocode("San Antonio, TX", mapboxToken).then(function(imput) {
+        map.setCenter(imput);
         var object = {
-            lng: sanAnResult[0],
-            lat: sanAnResult[1]
+            lng: imput[0],
+            lat: imput[1]
         };
         reverseGeocode(object, mapboxToken).then(function(result) {
             $('#location').html(result)});
         marker = marker
-            .setLngLat(sanAnResult)
+            .setLngLat(imput)
             .addTo(map);
     });
 
@@ -244,9 +234,9 @@
 
     $('button').click(function() {
         var address = $('.form-control').val();
-        geocode("" + address + "", mapboxToken).then(function(sanAnResult) {
+        geocode("" + address + "", mapboxToken).then(function(imput) {
             marker = marker
-                .setLngLat(sanAnResult);
+                .setLngLat(imput);
             updateMarker();
         });
     });
