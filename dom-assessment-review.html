@@ -3,8 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>DOM Review</title>
+
+    <style>
+        .highlight {
+            background: yellow;
+        }
+        .dbl {
+            background: purple;
+        }
+    </style>
 </head>
 <body>
+<p>Open up dom-review.html and follow the instructions:
+
+    Allow the user to type in their favorite food into the input and append it to the list once the button is clicked.
+
+    When the heading 'Change Me' is double clicked, change its background-color to purple.
+
+    Allow the user to input their cohort name. Once Update button is clicked, the text should should update with the name of the cohort.
+
+    My Cohort: Europa
+    When 'Highlight' button is clicked, change the background color of the cohort name to yellow.
+
+    Write some JavaScript that changes the background-color of the container to pink after 3 seconds.</p>
 <div class="container">
     <div id="main">
         <input type="text" id="input">
@@ -24,8 +45,35 @@
         <button id="change-cohort">Update</button>
 
         <br>
-        <button id="highlight">Highlight</button>
+        <button id="change-to-red">Change to Red</button>
     </div>
 </div>
+
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+
+    $('#add-to-list').click(function() {
+        var sandwich = $('#input').val();
+        console.log(sandwich);
+        $('#favorite-food').append('<li>' + sandwich + '</li>');
+    });
+
+    $('#change-me').dblclick(function() {
+        $('#change-me').toggleClass('dbl');
+    });
+    $('#change-cohort').click(function() {
+        var newCohort = $('#cohort-name').val();
+        $('#my-cohort').html("");
+        $('#my-cohort').html(newCohort);
+    });
+    $('#change-to-red').click(function() {
+        $('#my-cohort').toggleClass('highlight');
+    });
+    setTimeout(function() {
+        $('.container').css({'background-color': 'pink'});
+    }, 4000);
+
+
+</script>
 </body>
 </html>
