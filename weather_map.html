@@ -8,11 +8,14 @@
     <style>
 
 
-        .jumbotron {
-            background-color: black;
-            text-align: center;
+        .jumbotron{
+            background: url("img/storm-cloud.gif") no-repeat;
+            -webkit-background-size: 100% 100%;
+            -moz-background-size: 100% 100%;
+            -o-background-size: 100% 100%;
+            background-size: 100% 100%;
             color: whitesmoke;
-            height: 200px;
+            text-align: center;
         }
         ul {
             padding: 0;
@@ -69,7 +72,7 @@
         <div class="input-group-prepend">
             <button class="btn btn-outline-secondary" type="button" id="button-addon1">Search</button>
         </div>
-        <input type="text" class="form-control" placeholder="Enter Address" aria-label="Example text with button addon" aria-describedby="button-addon1">
+        <input type="text" class="form-control" placeholder="Enter City" aria-label="Example text with button addon" aria-describedby="button-addon1">
     </div>
 </div>
 
@@ -88,7 +91,7 @@
     "use strict";
 
     //Variables for Dark Sky
-    var weather = $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/29.4241,-98.4936");
+    var weather = $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/29.4255,-98.4916");
 
     var conditions = [
         {"clear-day": '<img src="img/Sun.svg" alt="sun">'},
@@ -177,7 +180,7 @@
                         condition = '<img src="img/Sun-Low.svg" alt="default">'
                 }
                 $('#insertWeather').append('<div class="col-4">' + '<h5 class="card-title text-center">' + date + '</h5>' + '<div class="card">' +
-                    '<div class="card-body m-0">' + '<ul class="text-center flex m-0" style="list-style: none"><li>' + high + "° / " + low + '°' + '</li><li>' + condition + '</li><li>' + text + '</li><li>' + data.daily.data[i].summary + '</li><li>' + '<strong>Humidity: </strong>' + Math.round(data.daily.data[i].humidity * 100) + '%' + '</li><li><strong>Wind: </strong>' + Math.round(data.daily.data[i].windSpeed) + 'mph' + '</li></li></ul>')
+                    '<div class="card-body m-0">' + '<ul class="text-center flex m-0" style="list-style: none"><li>' + high + "° / " + low + '°' + '</li><li>' + condition + '</li><li>' + text + '</li><li>' + '<strong>Humidity: </strong>' + Math.round(data.daily.data[i].humidity * 100) + '%' + '</li><li><strong>Wind: </strong>' + Math.round(data.daily.data[i].windSpeed) + 'mph' + '</li></li></ul>')
             }
 
         });
@@ -189,7 +192,7 @@
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/dark-v10',
-        zoom: 3,
+        zoom: 4,
     });
 
     var markerOptions = {
