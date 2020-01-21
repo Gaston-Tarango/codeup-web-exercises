@@ -344,17 +344,35 @@
         // }
 
 
-        #foo {
-            background-color: red;
+        // #foo {
+        //     background-color: red;
+        // }
+        //
+        // <h1 class="foo">Codeup Rocks!</h1>
+        // "use strict";
+        //
+        // $(document).ready(function() {
+        //     $('.foo').css('background-color', 'blue');
+        // });
+
+        // function isAnagram(x, y) {
+        //     if (x.length === y.length){
+        //         return true
+        //     } else {
+        //         return false
+        //     }
+        // }
+
+        let isAnagram = (word1, word2) => {
+            letters1 = word1.toLowerCase().split('').sort();
+            letters2 = word2.toLowerCase().split('').sort();
+            return (letters1.join() == letters2.join())
         }
 
-        <h1 class="foo">Codeup Rocks!</h1>
-        "use strict";
 
-        $(document).ready(function() {
-            $('.foo').css('background-color', 'blue');
-        });
-
+        console.log(isAnagram("silent", "listen"))
+        console.log(isAnagram("silent", "bob"))
+        console.log(isAnagram("airraid", "diarria"))
     </script>
 </body>
 </html>
